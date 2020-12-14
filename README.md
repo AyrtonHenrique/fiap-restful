@@ -56,7 +56,7 @@ Com isso, uma interface de documentação e testes é exposta para cada Web API,
 a)	Obtendo um token da API de segurança (POST)
 /autenticação 
 
-__ATENÇÃO: Este clientID abaixo está fixado para fins didáticos. Em um situação normal, os usuários poderiam ser cadastrados e a partir deles, os tokens gerados. Como o objetivo aqui é somente demonstrar a geração do token a partir de um usuário valido, fixamos o body abaixo e os dados em questão no banco H2 em memória!__
+__ATENÇÃO: Este clientID abaixo está fixado para fins didáticos. Em uma situação normal, os usuários poderiam ser cadastrados e a partir deles, os tokens gerados. Como o objetivo aqui é somente demonstrar a geração do token a partir de um usuário valido, fixamos o body abaixo e os dados em questão no banco H2 em memória!__
 
 Body da Requisição
 
@@ -208,6 +208,15 @@ g)	Consultando os dados globais da COVID-19
         }
 
 
+## Conclusão
+
+Nos últimos anos a integração entre sistemas evoluiu muito. Para quem passou por diversas tecnologias como RMI, Corba, COM+, dentre outras, atualmente se tem muito menos sofrimento e trabalho na criação de serviços web após o advento da padronização dos webservices no início da década dos anos 2000.
+Com a chegada do XML, padrões e protocolos baseados em arquivos de configuração com contratos pré-definidos e fortemente tipados se tornaram muito mais comuns. O padrão SOAP se tornou eficiente para integrações entre sistemas de maneira segura e eficaz e possibilitou a evolução para os padrões que culminaram na arquitetura SOA, onde as aplicações passaram a ser pensadas muito mais em relação aos serviços que oferecem e expõem do que em relação às telas e funcionalidades que detém.
+Com o aumento e difusão das tecnologias móveis, onde a comunicação entre sistemas, apps e softwares com servidores físicos ou não, máquinas virtuais ou serviços em Cloud se tornou cada vez mais necessário, outras tecnologias abaram se destacando, como o Javascript, o AJAX (feito em Javascript) e com isso, outros formatos de estruturação de dados, como o JSON.
+Desta forma, pode-se evoluir o desenvolvimento das aplicações, tornando-as desacopladas por natureza e onde os contratos passaram a ser estruturas em JSON indo e vindo entre estas aplicações, que no final só se conheciam e se conectavam pelo respeito a estes contratos.
+Com isso diversas possibilidades se abriram. A aplicação descrita neste trabalho é um exemplo de desenvolvimento rápido buscando dados na internet sobre informações relevantes e a exposição destes dados de maneira segura (usando protocolos de segurança como o OAuth e tokens JTW) e relativamente simples em qualquer tecnologia de frontend que manipule JSON.
+Outras tecnologias de backend se desenvolveram concomitantemente para facilitar ainda mais o desenvolvimento de Web APIs, webservices e arquiteturas baseadas em serviços, como Node.js, Spring, .Net Core, dentre outras. E cada vez mais temos desenvolvido aplicações desacopladas que se invocam entre si respeitando os seus contratos de serviço.
+Assim, a Tecnologia da Informação poderá ter o seu foco no que realmente interessa a ela, que é a manipulação dos dados diversos para gerar informação, abstraindo-se a complexidade interna e inerente de cada sistema e fazendo com que cada um deles se resolva com os dados que manipula, gerando o valor ao que se propôs.
 
 
 
