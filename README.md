@@ -55,7 +55,9 @@ Para os testes da API e a exemplificação do seu consumo, foi criada uma aplica
 Desta maneira, a aplicação abaixo foi criada e o usuário do dashboard pode ver dados: 
 
 a.	Dos Estados do Brasil (representado autoridades de saúde estaduais)
+
 b.	Do Brasil (representando autoridades de saúde federais)
+
 c.	Do mundo (representando autoridades internacionais)
 
 ![2](https://user-images.githubusercontent.com/67294168/102135955-80cd6580-3e37-11eb-970c-a67774c11edb.jpg)
