@@ -48,8 +48,17 @@ Com isso, uma interface de documentação e testes é exposta para cada Web API,
 
 ![swagger](https://user-images.githubusercontent.com/67294168/102131951-ba9b6d80-3e31-11eb-96b6-73fce8089a1a.png)
 
+## Frontend da Aplicação
 
+Para os testes da API e a exemplificação do seu consumo, foi criada uma aplicação frontend em AngularJS para representação dos dados. Como os dados expostos são relacionados à COVID-19, foi construído um dashboard informativo com o intuito de representar o período da pandemia e a inclusão de uma ferramenta de acompanhamento diário da pandemia em estados e países, e fazer comparação dos dados retornados de maneira gráfica.
 
+Desta maneira, a aplicação abaixo foi criada e o usuário do dashboard pode ver dados: 
+
+a.	Dos Estados do Brasil (representado autoridades de saúde estaduais)
+b.	Do Brasil (representando autoridades de saúde federais)
+c.	Do mundo (representando autoridades internacionais)
+
+![2](https://user-images.githubusercontent.com/67294168/102135955-80cd6580-3e37-11eb-970c-a67774c11edb.jpg)
 
 ## Simulação de Uso dos Endpoints
 
