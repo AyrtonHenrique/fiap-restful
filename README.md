@@ -1,4 +1,4 @@
-# Aplicação para suporte à COVID-19
+# Aplicação para suporte à COVID-19 - FIAP 2020
 
 ## Introdução
 
