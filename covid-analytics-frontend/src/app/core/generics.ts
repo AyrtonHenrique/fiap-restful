@@ -20,20 +20,11 @@ export class Generics {
     'australia',
   ];
   static lsStates: Array<string> = [
-    "AM",
-    "BA",
-    "CE",
-    "ES",
-    "GO",
     "MG",
-    "PA",
     "RJ",
     "RS",
     "SC",
-    "SP",
-    "SE",
-    "TO",
-    "DF"    
+    "SP",   
   ];
   static lsMesesConsulta: Array<PoSelectOption> = [
     {
