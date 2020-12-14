@@ -1,0 +1,118 @@
+<body>
+  <po-select
+    class="po-lg-4 po-md-4 po-sm-4"
+    #selPeriodo
+    p-placeholder="Selecione um período"
+    [p-options]="lsPeriodos"
+    (p-change)="changePeriodo($event)"
+    style="background-color: #f0f4f9"
+  ></po-select>
+  <po-input
+    class="po-lg-8 po-md-8 po-sm-8"
+    p-placeholder="Informe o Token Bearer"
+    (p-change)="changeToken($event)"
+    style="background-color: #f0f4f9"
+  ></po-input>
+  <po-container class="po-lg-12 po-md-12 po-sm-12 po-mb-2 loadingOverlayCover">
+    <div>
+      <h3 class="title-graph">Casos de Covid pelo Mundo no Período</h3>
+    </div>
+    <po-loading-overlay *ngIf="loadingGlobal" p-text="Carregando dados">
+    </po-loading-overlay>
+    <canvas
+      class="graphGlobal"
+      baseChart
+      height="50"
+      [datasets]="lsLinhasPaises"
+      [labels]="footerCasosCovidMundo"
+      [options]="graphEvoOptions"
+      [legend]="graphEvoShowLegend"
+      [chartType]="graphEvoTipo"
+    >
+    </canvas>
+  </po-container>
+  <po-container class="po-lg-6 po-md-12 po-sm-12 po-mb-2 loadingOverlayCover">
+    <div>
+      <h3 class="title-graph">Comparativo de Casos de Covid pelo Mundo</h3>
+    </div>
+    <po-loading-overlay p-text="Carregando dados" *ngIf="loadingCompareGlobal">
+    </po-loading-overlay>
+    <canvas
+      class="pieGlobal"
+      width="400"
+      height="120"
+      baseChart
+      [data]="pieChartComparativeGlobalData"
+      [labels]="pieChartComparativeGlobalLabels"
+      [options]="pieChartComparativeGlobalOptions"
+      [chartType]="pieChartComparativeGlobalType"
+    ></canvas>
+  </po-container>
+  <po-container class="po-lg-6 po-md-12 po-sm-12 po-mb-2 loadingOverlayCover">
+    <div>
+      <h3 class="po-lg-7 po-md-7 po-sm-12 title-graph">
+        Avanço do Covid no País
+      </h3>
+      <po-select
+        class="po-pull-right po-lg-4 po-md-4 po-sm-12"
+        p-placeholder="Selecione o pais"
+        [p-options]="lsPaises"
+        (p-change)="changePais($event)"
+      ></po-select>
+    </div>
+    <po-loading-overlay p-text="Carregando dados" *ngIf="loadingPais">
+    </po-loading-overlay>
+    <canvas
+      baseChart
+      width="400"
+      height="120"
+      [datasets]="lineChartData"
+      [labels]="footerCasosCovidMundo"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [chartType]="lineChartType"
+    ></canvas>
+  </po-container>
+  <po-container class="po-lg-6 po-md-12 po-sm-12 po-mb-2 loadingOverlayCover">
+    <div>
+      <h3 class="title-graph">Comparativo de Casos de Covid pelos Estados</h3>
+    </div>
+    <po-loading-overlay p-text="Carregando dados" *ngIf="loadingCompareState">
+    </po-loading-overlay>
+    <canvas
+      class="pieEstadual"
+      width="400"
+      height="120"
+      baseChart
+      [data]="pieChartComparativeEstadualData"
+      [labels]="pieChartComparativeEstadualLabels"
+      [options]="pieChartComparativeEstadualOptions"
+      [chartType]="pieChartComparativeEstadualType"
+    ></canvas>
+  </po-container>
+  <po-container class="po-lg-6 po-md-12 po-sm-12 po-mb-2 loadingOverlayCover">
+    <div>
+      <h3 class="po-lg-7 po-md-7 po-sm-12 title-graph">
+        Avanço do Covid no Estado
+      </h3>
+      <po-select
+        class="po-pull-right po-lg-4 po-md-4 po-sm-12"
+        p-placeholder="Selecione o estado"
+        [p-options]="lsEstados"
+        (p-change)="changeEstado($event)"
+      ></po-select>
+    </div>
+    <po-loading-overlay p-text="Carregando dados" *ngIf="loadingState">
+    </po-loading-overlay>
+    <canvas
+      baseChart
+      width="400"
+      height="120"
+      [datasets]="lineChartEstadoData"
+      [labels]="footerCasosCovidMundo"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [chartType]="lineChartType"
+    ></canvas>
+  </po-container>
+</body>

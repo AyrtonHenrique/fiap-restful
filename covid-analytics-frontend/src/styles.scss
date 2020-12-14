@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Rokkitt", serif !important;
+  background-color: #f0f4f9;
+}
+* {
+  font-family: Rokkitt !important;
+}
+
+.po-wrapper,
+.po-wrapper-menu-panel {
+  background-color: #fff;
+  max-height: auto;
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 120px !important;
+}
+
+.loadingOverlayCover {
+  position: relative !important;
+}
+
+.loadingOverlayCover .po-overlay-absolute {
+  position: absolute !important;
+}

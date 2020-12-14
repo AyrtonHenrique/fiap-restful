@@ -1,0 +1,30 @@
+.body {
+  margin-top: 0px;
+  padding: 0px;
+  background-color: #d3dfef;
+}
+
+:host ::ng-deep .po-container {
+  background-color: #fdfdfe;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px 0 #d4ddeb;
+}
+
+:host ::ng-deep .po-lg-6,
+:host ::ng-deep .po-md-12,
+:host ::ng-deep .po-mb-2 {
+  background-color: #f0f4f9;
+}
+
+.title-graph {
+  color: #293051;
+  font-weight: 500;
+  padding: 15px;
+}
+
+:host ::ng-deep .po-select-button,
+:host ::ng-deep .po-field-icon,
+:host ::ng-deep .po-select-item {
+  color: #fea0b5;
+  font-weight: 600;
+}
