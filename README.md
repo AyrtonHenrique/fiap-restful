@@ -46,6 +46,168 @@ http://[caminho-host]:[porta]/{context-path}/swagger-ui/
     
 Com isso, uma interface de documentação e testes é exposta para cada Web API, conforme imagem abaixo: 
 
-![swagger_2](https://user-images.githubusercontent.com/67294168/99307973-014b7700-2836-11eb-9c9c-ffabd413e447.png)
+![swagger](https://user-images.githubusercontent.com/67294168/102131951-ba9b6d80-3e31-11eb-96b6-73fce8089a1a.png)
+
+
+
+
+## Simulação de Uso dos Endpoints
+
+a)	Obtendo um token da API de segurança (POST)
+/autenticação 
+
+__ATENÇÃO: Este clientID abaixo está fixado para fins didáticos. Em um situação normal, os usuários poderiam ser cadastrados e a partir deles, os tokens gerados. Como o objetivo aqui é somente demonstrar a geração do token a partir de um usuário valido, fixamos o body abaixo e os dados em questão no banco H2 em memória!__
+
+Body da Requisição
+
+        {
+          "clientId": "123456",
+          "clientSecret": "13245487",
+          "grantType": "password",
+          "password": "121294",
+          "user": "123456"
+        }
+
+      Retorno da Resposta:
+
+        { 
+            "AcessToken": ”eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwNzg2ODQwMjg1NyIsImlhdCI6MTYwNTQ2MjkyOSwiXhwIjoxNjA1NDgwOTI5fQ.zCdt-AhKk3rooyXYirASpn_LiaQtP-MPKKa0fNR3IY” 
+        } 
+
+
+b)	Validando um token da API de segurança (GET)
+/autenticação 
+
+Body da Requisição
+
+        { 
+            "token": ”Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwNzg2ODQwMjg1NyIsImlhdCI6MTYwNTQ2MjkyOSwiXhwIjoxNjA1NDgwOTI5fQ.zCdt-AhKk3rooyXYirASpn_LiaQtP-MPKKa0fNR3IY” 
+        } 
+
+Retorno do token JWT para ser passado no Header das chamadas: 
+
+        {
+          "rules": [
+            "string"
+          ],
+          "tipo": "string",
+          "username": "string"
+        }
+
+
+c)	Consultando os dados de um Estado do específico do Brasil (GET)
+/covid/estado/{estado}?periodoDe=yyyy-MM-dd&periodoAte= yyyy-MM-dd 
+
+Retorno do token JWT para ser passado no Header das chamadas: 
+
+        {
+          "estado": "string",
+          "nome": "string",
+          "periodos": [
+            {
+              "casos": 0,
+              "data": "string",
+              "mortes": 0,
+              "recuperados": 0
+            }
+          ],
+          "totaisPeriodo": {
+            "casos": 0,
+            "mortes": 0,
+            "recuperados": 0
+          }
+        }
+ 
+
+
+d)	Consultando os dados de diversos estados ao mesmo tempo (GET)
+/covid/estado?estados=sp,rj,mg,am&periodoDe=yyyy-MM-dd&periodoAte= yyyy-MM-dd 
+
+        [
+          {
+            "estado": "string",
+            "nome": "string",
+            "periodos": [
+              {
+                "casos": 0,
+                "data": "string",
+                "mortes": 0,
+                "recuperados": 0
+              }
+            ],
+            "totaisPeriodo": {
+              "casos": 0,
+              "mortes": 0,
+              "recuperados": 0
+            }
+          }
+        ]
+
+e)	Consultando os dados de um país específico
+/covid/país/{país}?periodoDe=yyyy-MM-dd&periodoAte= yyyy-MM-dd
+
+        {
+          "nome": "string",
+          "pais": "string",
+          "periodos": [
+            {
+              "casos": 0,
+              "data": "string",
+              "mortes": 0,
+              "recuperados": 0
+            }
+          ],
+          "totaisPeriodo": {
+            "casos": 0,
+            "mortes": 0,
+            "recuperados": 0
+          }
+        }
+
+
+f)	Consultando os dados de diversos países do mundo ao mesmo tempo
+/covid/pais?paises=brazil,canada,china&periodoDe=yyyy-MM-dd&periodoAte= yyyy-MM-dd	
+
+        [
+          {
+            "nome": "string",
+            "pais": "string",
+            "periodos": [
+              {
+                "casos": 0,
+                "data": "string",
+                "mortes": 0,
+                "recuperados": 0
+              }
+            ],
+            "totaisPeriodo": {
+              "casos": 0,
+              "mortes": 0,
+              "recuperados": 0
+            }
+          }
+        ]
+
+g)	Consultando os dados globais da COVID-19
+
+        /covid/global
+        {
+          "periodos": [
+            {
+              "casos": 0,
+              "data": "string",
+              "mortes": 0,
+              "recuperados": 0
+            }
+          ],
+          "totaisPeriodo": {
+            "casos": 0,
+            "mortes": 0,
+            "recuperados": 0
+          }
+        }
+
+
+
 
 
