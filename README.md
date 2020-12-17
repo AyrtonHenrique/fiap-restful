@@ -15,7 +15,7 @@ Por fim, foi construído um frontend em AngularJS para consumir a Web API e o mi
 
 ## Desenho Básico da Solução
 
-![trabalho_final_ws](https://user-images.githubusercontent.com/67294168/102129916-e10bd980-3e2e-11eb-82a1-39d639003373.png)
+![trabalho_final_ws](https://user-images.githubusercontent.com/67294168/102436654-d0f32600-3ff7-11eb-84c7-5bfdee50beba.png)
 
 ## Estruturação do Projeto no GitHub
 
